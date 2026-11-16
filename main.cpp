@@ -58,12 +58,13 @@ int main(int cantidadArgumentos, char* argumentos[]) {
         Circuito circuitoOrdenado = maquina.ordenarAgujeros(circuitoOriginal);
         double distanciaTotal = maquina.calcularDistancia(circuitoOrdenado);
 
-        salida << cantidadAgujeros  << "\n";
+        salida << cantidadAgujeros + 1 << "\n";
         for (int indiceAgujero = 0; indiceAgujero < cantidadAgujeros; ++indiceAgujero) {
             Punto agujero = circuitoOrdenado.obtenerAgujero(indiceAgujero);
             salida << agujero.obtenerX() << " " << agujero.obtenerY() << "\n";
         }
-     
+        //para hacer que vaya a 00 al final 
+        salida << "0 0\n";
 
         cout << "Circuito " << (indiceCircuito + 1) << ": "
              << cantidadAgujeros << " agujeros, distancia total recorrida = "
