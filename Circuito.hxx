@@ -2,7 +2,6 @@
 #define CIRCUITO_HXX
 
 #include "Circuito.h"
-#include <stdexcept>
 
 // Crea un circuito vacio
 Circuito::Circuito() {}
@@ -14,8 +13,9 @@ int Circuito::cantidadAgujeros() const {
 
 // Devuelve el agujero que ocupa el indice que se busca
 Punto Circuito::obtenerAgujero(int indiceAgujero) const {
+    // Si el indice no existe, se devuelve el punto de origen.
     if (indiceAgujero < 0 || indiceAgujero >= this->cantidadAgujeros()) {
-        throw std::out_of_range("Indice de agujero fuera de rango");
+        return Punto();
     }
     return this->agujeros[indiceAgujero];
 }

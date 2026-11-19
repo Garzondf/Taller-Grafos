@@ -66,9 +66,7 @@ int main(int cantidadArgumentos, char* argumentos[]) {
         //para hacer que vaya a 00 al final 
         salida << "0 0\n";
 
-        cout << "Circuito " << (indiceCircuito + 1) << ": "
-             << cantidadAgujeros << " agujeros, distancia total recorrida = "
-             << distanciaTotal << " mm\n";
+        cout << "Circuito " << (indiceCircuito + 1) << ": "<< cantidadAgujeros << " agujeros, distancia total recorrida = "<< distanciaTotal << " mm\n";
     }
 
     entrada.close();

@@ -22,8 +22,7 @@ Grafo<Punto, double> Maquina::construirGrafo(const Circuito& circuito) const {
     int cantidadVertices = grafo.cantidadVertices();
     for (int indiceOrigen = 0; indiceOrigen < cantidadVertices; ++indiceOrigen) {
         for (int indiceDestino = indiceOrigen + 1; indiceDestino < cantidadVertices; ++indiceDestino) {
-            double distancia = grafo.obtenerVertice(indiceOrigen)
-                                   .distancia(grafo.obtenerVertice(indiceDestino));
+            double distancia = grafo.obtenerVertice(indiceOrigen).distancia(grafo.obtenerVertice(indiceDestino));
             grafo.insertarArista(indiceOrigen, indiceDestino, distancia);
         }
     }

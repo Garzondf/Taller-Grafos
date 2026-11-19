@@ -28,6 +28,7 @@ void Punto::fijarY(double nuevaCoordenadaY) {
 double Punto::distancia(const Punto& otroPunto) const {
     double diferenciaX = this->coordenadaX - otroPunto.obtenerX();
     double diferenciaY = this->coordenadaY - otroPunto.obtenerY();
+    //pitagoras (?
     return std::sqrt(diferenciaX * diferenciaX + diferenciaY * diferenciaY);
 }
 

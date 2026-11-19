@@ -2,7 +2,6 @@
 #define GRAFO_HXX
 
 #include "Grafo.h"
-#include <stdexcept>
 
 
 template <class TipoVertice, class TipoCosto>
@@ -53,7 +52,7 @@ bool Grafo<TipoVertice, TipoCosto>::insertarArista(
 template <class TipoVertice, class TipoCosto>
 TipoVertice Grafo<TipoVertice, TipoCosto>::obtenerVertice(int indiceVertice) const {
     if (indiceVertice < 0 || indiceVertice >= this->cantidadVertices()) {
-        throw std::out_of_range("Indice de vertice fuera de rango");
+        return TipoVertice();
     }
     return this->vertices[indiceVertice];
 }
@@ -88,7 +87,7 @@ TipoCosto Grafo<TipoVertice, TipoCosto>::obtenerCosto(
             }
         }
     }
-    throw std::invalid_argument("La arista solicitada no existe");
+    return TipoCosto();
 }
 
 // Devuelve los vecinos del vertice con el costo de cada arista.
@@ -96,7 +95,7 @@ template <class TipoVertice, class TipoCosto>
 std::list<std::pair<int, TipoCosto>> Grafo<TipoVertice, TipoCosto>::obtenerVecinos(
     int indiceVertice) const {
     if (indiceVertice < 0 || indiceVertice >= this->cantidadVertices()) {
-        throw std::out_of_range("Indice de vertice fuera de rango");
+        return std::list<std::pair<int, TipoCosto>>();
     }
     return this->aristas[indiceVertice];
 }
