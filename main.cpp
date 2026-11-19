@@ -43,6 +43,11 @@ int main(int cantidadArgumentos, char* argumentos[]) {
 
     cout << "Cantidad de circuitos: " << cantidadCircuitos << "\n";
     cout << fixed << setprecision(2);
+    cout << "\n";
+    cout << left << setw(12) << "Circuito"
+         << right << setw(12) << "Agujeros"
+         << right << setw(24) << "Distancia total (mm)" << "\n";
+    cout << string(48, '-') << "\n";
 
     for (int indiceCircuito = 0; indiceCircuito < cantidadCircuitos; ++indiceCircuito) {
         int cantidadAgujeros = 0;
@@ -66,10 +71,9 @@ int main(int cantidadArgumentos, char* argumentos[]) {
         //para hacer que vaya a 00 al final 
         salida << "0 0\n";
 
-        cout << "\n";
-        cout << "================ Circuito " << (indiceCircuito + 1) << " ================\n";
-        cout << "Agujeros: " << cantidadAgujeros << "\n";
-        cout << "Distancia total recorrida: " << distanciaTotal << " mm\n";
+        cout << left << setw(12) << (indiceCircuito + 1)
+             << right << setw(12) << cantidadAgujeros
+             << right << setw(24) << distanciaTotal << "\n";
     }
 
     entrada.close();
